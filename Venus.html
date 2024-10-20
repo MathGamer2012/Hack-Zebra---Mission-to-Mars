@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <script>
+        function myFunction() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("myBtn");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more-->";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "<--Read less";
+                moreText.style.display = "inline";
+            }
+        }
+        function myFunction2() {
+            document.getElementById("fuel").innerHTML = "The total amount of fuel required for a spacecraft going" + "<br>" + "to Venus is 1.56 million gallons!";
+            document.getElementById("fuel2").innerHTML = "The total amount of liquid hydrogen fuel rquired for a" + "<br>" + "spacecraft going to Venus is 520,000 gallons!";
+            document.getElementById("fuel3").innerHTML = "The total amount of liquid oxyegen fuel rquired for a" + "<br>" + "spacecraft going  to Venus is 640,000 gallons!";
+            document.getElementById("fuel4").innerHTML = "The total amount of kersone fuel rquired for a spacecraft going" + "<br>" + "to Venus is 410,000 gallons!";
+            document.getElementById("fuel5").innerHTML = "The distance between the Earth and Venus" + "<br>" + "is 177 million km! So if we go 28,968 km/hr" + "<br>" + "we will reach Venus in 255 days";
+        }
+        function myFunction3() {
+            var time = prompt("How long to you want the flight to be (hours)")
+            var distance = 177780000
+            var speed = distance / time
+            alert("The speed wil have to be " + speed + " km/hr to reach Venus in " + time + " hours")
+        }
+        var today = new Date();
+        var str = today.toGMTString();
+
+        var correct = "Correct!";
+        var incorrect = "Incorrect!";
+
+        var wrong = new Audio(); 
+        wrong.src = "wrong.mp3";
+
+        var right = new Audio(); 
+        right.src = "right.mp3";
+
+        var lift = new Audio(); 
+        lift.src = "lift.mp3";
+    </script>
+</head>
+<link rel="stylesheet" href="style.css" />
+<ul>
+    <li style="float:left"><a class="active" href="welcomePage(clickfirst).html">Home</a></li>
+    <li style="float:left"><a class="active" href="#Mission to Mars">Mission to Mars</a></li>
+    <li style="float:right; text-shadow: 1px 1px lightgreen;"><a href="Neptune.html">Neptune</a></li>
+    <li style="float:right; text-shadow: 1px 1px lightgreen;"><a href="Venus.html">Venus</a></li>
+    <li style="float:right; text-shadow: 1px 1px lightgreen;"><a href="Mars.html">Mars</a></li>
+    <li style="float:right; text-shadow: 1px 1px lightgreen;"><a href="Saturn.html">Saturn</a></li>
+</ul>
+
+<body background="bg.gif" style="background-repeat: no-repeat; background-size: 150% 200%;">
+    <b>
+        <h1 style="color: white;text-align:center; font-size: 45; text-shadow: 2px 2px lightgreen;"> Venus </h1>
+    </b>
+    <marquee behavior="scroll" direction="left" style="color:white; text-shadow: 1px 1px red"> <b> Venus is the 6th
+            largest planet in the Solar System! </b>
+    </marquee>
+    <button type="button" class="button1" onclick="document.getElementById('demo').innerHTML = str;">
+        Internation Space Station Time</button>
+    <p id="demo" style="color: white;text-shadow: 1px 1px red">
+    </p>
+
+    <div class="container">
+        <img src="venus.jpg" alt="Avatar" class="image" style="width:50%" hspace="30">
+        <div class="middle">
+            <div class="text">Venus</div>
+        </div>
+    </div>
+    <br>
+    <button type="button" class="button1" onclick="window.location.href='countdown3.html';"> Countdown </button>
+    <br>
+    <br>
+    <button type="button" class="button1" onclick="window.location.href='canvas3.html';"> Flight Path </button>
+    <br>
+    <br>
+    <button id="button" class="button1" onclick="myFunction2()"> Space Flight Details
+    </button>
+    <p id="fuel" style="color: white;text-shadow: 1px 1px red"> </p>
+    <p id="fuel2" style="color: white;text-shadow: 1px 1px red"> </p>
+    <p id="fuel3" style="color: white;text-shadow: 1px 1px red"> </p>
+    <p id="fuel4" style="color: white;text-shadow: 1px 1px red"> </p>
+    <p id="fuel5" style="color: white;text-shadow: 1px 1px red"> </p>
+
+    <button id="button" class="button1" onclick="myFunction3()"> Calculate Speed
+    </button>
+
+    <div style="float: right; color: white;">
+        <h1 class="right"><b>Distance from the Sun:</b></h1>
+        <p class="para4"> The distance between the Sun and Venus is 107.53 million kilometers! </p>
+    </div>
+    <div style="float: right; color: white;">
+        <h1 class="right2"><b>Size/Age:</b></h1>
+        <p class="para7"> The size (radius) of Venus is 6,051 kiliometers! Venus is actually 4.503 billion years
+            old!
+        </p>
+    </div>
+    <div style="float: right; color: white;">
+        <h1 class="right3"><b>Fun Facts:</b></h1>
+        <p class="para8"> 1. Venus is the second brightest object in the night sky.
+            <br> 2. Venus does not have any moons or rings.
+            <br> 3. The surface temperature on Venus can reach 471 °C.<span id="dots"></span> <span id="more">
+                <br> 4. Venus is the hottest planet in our solar system.
+                <br> 5. A day on Venus is longer than a year.
+
+            </span> </p>
+        <div class="button">
+            <button onclick="myFunction()" id="myBtn" class="button1"><b> Read more--> </b></button>
+        </div>
+    </div>
+    <div style="float: right; color: white;">
+        <h1 class="right4"><b>Trivia:</b></h1>
+        <p class="para14"> Which country sent the first mission to Venus? </p>
+        <br>
+        <button class="button8" onclick="(document.getElementById('check').innerHTML = incorrect)" onmousedown="wrong.play()"> A) USA </button>
+        <p id="check" class="check5"> </p>
+        <br>
+        <button class="button9" onclick="(document.getElementById('check2').innerHTML = incorrect)" onmousedown="wrong.play()"> B) India
+        </button>
+        <p id="check2" class="check6"> </p>
+        <br>
+        <button class="button6" onclick="(document.getElementById('check3').innerHTML = correct)" onmousedown="right.play()"> C) Russia
+        </button>
+        <p id="check3" class="check7"> </p>
+        <br>
+        <button class="button7" onclick="(document.getElementById('check4').innerHTML = incorrect)" onmousedown="wrong.play()"> D) China
+        </button>
+        <p id="check4" class="check8"> </p>
+    </div>
+</body>
+
+</html>

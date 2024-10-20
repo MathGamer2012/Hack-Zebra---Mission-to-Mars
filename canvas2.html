@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function myMove() {
+            var elem = document.getElementById("myAnimation");
+            var pos = 0;
+            var id = setInterval(frame, 5);
+            function frame() {
+                if (pos == 870) {
+                    clearInterval(id);
+                }
+                else {
+                    pos++;
+                    elem.style.top = pos + 'py';
+                    elem.style.right = pos + 'px';
+                }
+            }
+        }
+    </script>
+</head>
+
+
+<link rel="stylesheet" href="style.css" />
+
+<body background="bg2.gif" style="background-repeat: no-repeat; background-size: 150% 1500%;">
+
+    <ul>
+        <li style="float:left"><a class="active" href="welcomePage(clickfirst).html">Home</a></li>
+        <li style="float:left"><a class="active" href="#Mission to Mars">Mission to Mars</a></li>
+        <li style="float:right; text-shadow: 1px 1px lightgreen;"><a href="Neptune.html">Neptune</a></li>
+        <li style="float:right; text-shadow: 1px 1px lightgreen;"><a href="Venus.html">Venus</a></li>
+        <li style="float:right; text-shadow: 1px 1px lightgreen;"><a href="Mars.html">Mars</a></li>
+        <li style="float:right; text-shadow: 1px 1px lightgreen;"><a href="Saturn.html">Saturn</a></li>
+    </ul>
+
+    <br>
+    <br>
+    <p>
+        <button onclick="myMove()" type="button" class="button10">Click on this to see your Fligth Path to Mars</button>
+    </p>
+
+
+    <img src="spaceship.png" id="myAnimation" width="200" height="200"></img>
+    <img src="earth.gif" width="200" height="200" style="margin-left: 80%;margin-top: 25%;position:absolute"> </img>
+    <figcaption style="display:inline; margin-left:  83%; margin-top: 40%; font-size: 50px; color:white">
+    </figcaption>
+    <h1 class="caption"> Earth </h1>
+    <img src="mars2.gif" width="200" height="200" style="margin-left: -43%;margin-top: 25%; position:absolute"> </img>
+    <figcaption style="display: inline; margin-left: -43%; margin-top: 305%; font-size: 50px; color:white;">
+    </figcaption>
+    <h1 class="caption2"> Mars' Orbit </h1>
+    <img src="mars.gif" width="200" height="200" style="margin-left: -39%;margin-top: 25%; position:absolute"> </img>
+    <figcaption style="display: inline; margin-left: -43%; margin-top: 305%; font-size: 50px; color:white;">
+    </figcaption>
+    <h1 class="caption3"> Mars </h1>
+</body>
+
+</html>

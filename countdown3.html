@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function timer(time, update, complete) {
+            var start = new Date().getTime();
+            var interval = setInterval(function () {
+                var now = time - (new Date().getTime() - start);
+                if (now <= 0) {
+                    clearInterval(interval);
+                    complete();
+                }
+                else update(Math.floor(now / 1000));
+            }, 100);
+        }
+        timer(
+            11000,
+            function (timeleft) {
+                document.getElementById('timer').innerHTML = timeleft;
+            },
+            function () {
+                document.getElementById('timer').innerHTML = "Blast Off!"
+            }
+        );
+    </script>
+</head>
+
+<body background="bg4.gif" style="background-repeat: no-repeat; background-size: 100% 160%;">
+    <link rel="stylesheet" href="style.css" />
+    <h1 class="timer2"> The rocket will take off in..... </h1>
+    <br>
+    <br>
+    <br>
+    <p id="timer" class="timer"></p>
+    <a href="canvas3.html">
+        <p class="timer3"> Click on this to view your space journey to Venus </p>
+    </a>
+</body>
+
+</html>

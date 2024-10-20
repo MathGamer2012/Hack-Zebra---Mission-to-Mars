@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <script>
+        function myFunction() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("myBtn");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more-->";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "<--Read less";
+                moreText.style.display = "inline";
+            }
+        }
+        function myFunction2() {
+            document.getElementById("fuel").innerHTML = "The total amount of fuel required for a spacecraft going" + "<br>" + "to Neptune is 52.23 million gallons!";
+            document.getElementById("fuel2").innerHTML = "The total amount of liquid hydrogen fuel rquired for a" + "<br>" + "spacecraft going to Neptune is 17.42 million gallons!";
+            document.getElementById("fuel3").innerHTML = "The total amount of liquid oxyegen fuel rquired for a" + "<br>" + "spacecraft going  to Neptune is 21.36 million gallons!";
+            document.getElementById("fuel4").innerHTML = "The total amount of kersone fuel rquired for a spacecraft going" + "<br>" + "to Neptune is 13.62 million gallons!";
+            document.getElementById("fuel5").innerHTML = "The distance between the Earth and Neptune" + "<br>" + "is 4.356 billion km! So if we go 28,968 km/hr" + "<br>" + "we will reach Neptune in 17.1 years";
+        }
+        function myFunction3() {
+            var time = prompt("How long to you want the flight to be (hours)")
+            var distance = 4356100000
+            var speed = distance / time
+            alert("The speed wil have to be " + speed + " km/hr to reach Neptune in " + time + " hours")
+        }
+        var today = new Date();
+        var str = today.toGMTString();
+
+        var correct = "Correct!";
+        var incorrect = "Incorrect!";
+
+        var wrong = new Audio(); 
+        wrong.src = "wrong.mp3";
+
+        var right = new Audio(); 
+        right.src = "right.mp3";
+
+        var lift = new Audio(); 
+        lift.src = "lift.mp3";
+    </script>
+</head>
+<link rel="stylesheet" href="style.css" />
+<ul>
+    <li style="float:left"><a class="active" href="welcomePage(clickfirst).html">Home</a></li>
+    <li style="float:left"><a class="active" href="#Mission to Mars">Mission to Mars</a></li>
+    <li style="float:right; text-shadow: 1px 1px lightgreen;"><a href="Neptune.html">Neptune</a></li>
+    <li style="float:right; text-shadow: 1px 1px lightgreen;"><a href="Venus.html">Venus</a></li>
+    <li style="float:right; text-shadow: 1px 1px lightgreen;"><a href="Mars.html">Mars</a></li>
+    <li style="float:right; text-shadow: 1px 1px lightgreen;"><a href="Saturn.html">Saturn</a></li>
+</ul>
+
+<body background="bg.gif" style="background-repeat: no-repeat; background-size: 150% 200%;">
+    <b>
+        <h1 style="color: white;text-align:center; font-size: 45; text-shadow: 2px 2px lightgreen;"> Neptune </h1>
+    </b>
+    <marquee behavior="scroll" direction="left" style="color:white; text-shadow: 1px 1px red"> <b> Neptune is the
+            4th largest planet in the Solar System! </b>
+    </marquee>
+    <button type="button" class="button1" onclick="document.getElementById('demo').innerHTML = str;">
+        Internation Space Station Time</button>
+
+    <p id="demo" style="color: white;text-shadow: 1px 1px red"> </p>
+
+    <div class="container">
+        <img src="neptune.jpg" alt="Avatar" class="image" style="width:50%" hspace="30">
+        <div class="middle">
+            <div class="text">Neptune</div>
+        </div>
+    </div>
+    <br>
+    <button type="button" class="button1" onclick="window.location.href='countdown4.html';"> Countdown </button>
+    <br>
+    <br>
+    <button type="button" class="button1" onclick="window.location.href='canvas4.html';"> Flight Path </button>
+    <br>
+    <br>
+    <button id="button" class="button1" onclick="myFunction2()"> Space Flight Details
+    </button>
+    <p id="fuel" style="color: white;text-shadow: 1px 1px red"> </p>
+    <p id="fuel2" style="color: white;text-shadow: 1px 1px red"> </p>
+    <p id="fuel3" style="color: white;text-shadow: 1px 1px red"> </p>
+    <p id="fuel4" style="color: white;text-shadow: 1px 1px red"> </p>
+    <p id="fuel5" style="color: white;text-shadow: 1px 1px red"> </p>
+
+    <button id="button" class="button1" onclick="myFunction3()"> Calculate Speed
+    </button>
+
+
+    <div style="float: right; color: white;">
+        <h1 class="right"><b>Distance from the Sun:</b></h1>
+        <p class="para"> The distance between the Sun and Neptune is 4.4762 billion kilometers! </p>
+    </div>
+    <div style="float: right; color: white;">
+        <h1 class="right2"><b>Size/Age:</b></h1>
+        <p class="para9"> The size (radius) of Venus is 24,622 kiliometers! Neptune is actually 4.503 billion years
+            old!
+        </p>
+    </div>
+    <div style="float: right; color: white;">
+        <h1 class="right3"><b>Fun Facts:</b></h1>
+        <p class="para10"> 1. Only one spacecraft has flown by Neptune
+            <br> 2. A year on Neptune lasts 165 Earth years.
+            <br> 3. Neptune is the smallest gas giant. <span id="dots"> </span> <span id="more">
+                <br> 4. Neptune has a very active climate.
+                <br> 5. Neptune has 6 faint rings.
+
+            </span> </p>
+        <div class="button">
+            <button onclick="myFunction()" id="myBtn" class="button1"><b> Read more--> </b></button>
+        </div>
+    </div>
+    <div style="float: right; color: white;">
+        <h1 class="right4"><b>Trivia:</b></h1>
+        <p class="para15"> How many moons does Neptune have? </p>
+        <br>
+        <button class="button2" onclick="(document.getElementById('check').innerHTML = incorrect)" onmousedown="wrong.play()"> A) 12 </button>
+        <p id="check" class="check1"> </p>
+        <br>
+        <button class="button3" onclick="(document.getElementById('check2').innerHTML = correct)" onmousedown="right.play()"> B) 14 </button>
+        <p id="check2" class="check9"> </p>
+        <br>
+        <button class="button4" onclick="(document.getElementById('check3').innerHTML = incorrect)" onmousedown="wrong.play()"> C) 18 </button>
+        <p id="check3" class="check3"> </p>
+        <br>
+        <button class="button5" onclick="(document.getElementById('check4').innerHTML = incorrect)" onmousedown="wrong.play()"> D) 16 </button>
+        <p id="check4" class="check10"> </p>
+    </div>
+</body>
+
+</html>
